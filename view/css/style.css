@@ -1,0 +1,10 @@
+.add_field_button{
+    float: right;
+}
+.iti--separate-dial-code{
+    width: 100% !important;
+}
+#validity-message{
+    text-align: center;
+    font-size: 22px;
+}
