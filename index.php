@@ -37,6 +37,12 @@
 
         ?>
         <div class="form-group col-md-12">
+            <?php
+            if($allInfo == "No data Found"){
+            ?>
+            <h2 style="text-align: center">No data Found</h2>
+            <?php }
+            else{?>
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -57,7 +63,8 @@
                 <tbody>
                 <?php
                     $i = 1;
-                    if(!empty($allInfo)){
+
+                    if(!empty($allInfo) && $allInfo != "No data Found"){
                         foreach ($allInfo as $j=>$info){
 
                 ?>
@@ -82,6 +89,7 @@
                 ?>
                 </tbody>
             </table>
+            <?php } ?>
         </div>
 
     </div>

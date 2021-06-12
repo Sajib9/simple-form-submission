@@ -23,12 +23,13 @@
             <h2 style="text-align: center">Buyer Receipt</h2>
         </div>
 
+        <div class="col-md-10" id="validity-message">
+
+        </div>
+
     </div>
 
 
-    <div id="validity-message">
-
-    </div>
     <form id="simple_form">
         <div class="col-md-10">
             <div class="form-group col-md-10">

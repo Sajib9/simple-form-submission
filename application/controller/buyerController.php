@@ -5,7 +5,7 @@ require_once('application/model/buyerModel.php');
 class BuyerInfo{
     public function buyers_info($data){
         //$salt = '$' . $data['email'] . '=$' . $data['amount'] . '$' . $data['city'];
-        $salt = substr(md5(uniqid(rand(), TRUE)), 0, 5);
+        $salt = substr(md5(uniqid(rand(), TRUE)), 0, 3);
         $amount = $data['amount'];
         $buyer_name = $data['buyer_name'];
         $receipt_id = $data['receipt_id'];

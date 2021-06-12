@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo json_encode($validate_result);
     }else{
         $buyer = new BuyerInfo();
-        if(empty($_COOKIE['buyer_receipt']) || $_COOKIE['buyer_receipt'] = 2021){
+        if(empty($_COOKIE['buyer_receipt']) || $_COOKIE['buyer_receipt'] != 2021){
             $lastInsertedId = $buyer->buyers_info($_POST);
             if($lastInsertedId){
                 setcookie('buyer_receipt', 2021, time()+86400);

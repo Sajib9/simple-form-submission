@@ -64,6 +64,8 @@ class BuyerModel{
         $sql = "SELECT * FROM buyers ORDER BY id";
         $result = $this->conn->query($sql);
 
+        $resultset = array();
+
         if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
                 $resultset[] = $row;
