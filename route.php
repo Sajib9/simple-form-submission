@@ -1,9 +1,10 @@
 <?php
 require_once('application/controller/buyerController.php');
+require_once('application/model/buyerModel.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $validate = new ServerValidation();
-    $validate_result =$validate->validate($_POST);
+    $validate = new BuyerModel();
+    $validate_result =$validate->dataValidation($_POST);
 
     if($validate_result['resp_code'] == 1){
         echo json_encode($validate_result);

@@ -69,4 +69,15 @@ class BuyerInfo{
         return $insertId;
 
     }
+
+    public function allInfo(){
+        $buyer_model = new BuyerModel();
+        $getInfo = $buyer_model->getInfo();
+        if(!empty($getInfo))
+            return $getInfo;
+        else
+            return "No data Found";
+
+    }
+
 }
