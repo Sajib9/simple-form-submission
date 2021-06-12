@@ -9,5 +9,11 @@
     font-size: 22px;
 }
 #btnAddAction{
-    margin-top: 22px;
+    margin-top: 25px;
+}
+#table-div{
+    margin-top: 25px;
+}
+.b-top{
+    border-top: 1px solid #ddd !important;
 }

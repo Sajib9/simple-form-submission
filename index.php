@@ -24,28 +24,50 @@
 
 <div class="container">
 
-    <div class="row">
+    <div class="row" id="btnAddAction">
+        <div class="row">
         <div class="form-group col-md-10">
+
+                <div class="col-md-10">
+                    <div class="col-md-3">
+                        <label for="user_id">User ID:</label>
+                        <input type="text" class="form-control" id="user_id" placeholder="Search Entry By" name="user_id">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="from_date">From Date:</label>
+                        <input type="date" class="form-control" name="from_date" id="from_date" >
+                    </div>
+                    <div class="col-md-3">
+                        <label for="end_date">End Date:</label>
+                        <input type="date" class="form-control" name="end_date" id="end_date" >
+                    </div>
+                    <div class="col-md-1">
+                        <label for="end_date"></label>
+                        <button type="submit" id="search" name="search" class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+
 
         </div>
         <div class="form-group col-md-2">
-            <a id="btnAddAction" class="btn btn-success" href="view/buyers/buyer_create.php">Add New Receipt</a>
+            <a class="btn btn-success" href="view/buyers/buyer_create.php" style="margin-top: 18px">Add New Receipt</a>
+        </div>
         </div>
         <?php
             $controllerInstance = new BuyerInfo();
             $allInfo = $controllerInstance->allInfo();
 
         ?>
-        <div class="form-group col-md-12">
+        <div class="form-group col-md-12" id="table-div">
             <?php
             if($allInfo == "No data Found"){
             ?>
             <h2 style="text-align: center">No data Found</h2>
             <?php }
             else{?>
-            <table class="table table-striped">
+            <table class="table table-striped table-hover">
                 <thead>
-                <tr>
+                <tr class="b-top">
                     <th scope="col">#</th>
                     <th scope="col">Amount</th>
                     <th scope="col">Buyer Name</th>
