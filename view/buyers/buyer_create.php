@@ -82,7 +82,7 @@
             <div class="form-group col-md-10">
                 <label for="enter_by">Enter By:</label>
                 <span id="entry-by-info" class="info"></span><br />
-                <input type="text" class="form-control" id="enter_by" placeholder="Enter BY" name="enter_by">
+                <input type="text" class="form-control" id="enter_by" placeholder="Enter BY (Only number)" name="enter_by">
             </div>
             <div class="col-md-10">
                 <button type="submit" class="btn btn-success save-data">Process Receipt</button>
