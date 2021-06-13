@@ -2,7 +2,7 @@
 
 ## Installation Instructions
 
-###Required Tech
+##Required Tech
     1. php 7.4
     2. Jquery 3.5
     3. Xampp server
