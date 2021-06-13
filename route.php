@@ -2,7 +2,7 @@
 require_once('application/controller/buyerController.php');
 require_once('application/model/buyerModel.php');
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && !empty($_POST['amount'])) {
     $validate = new BuyerModel();
     $validate_result =$validate->dataValidation($_POST);
 
@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo json_encode($validate_result);
     }else{
         $buyer = new BuyerInfo();
-        if(empty($_COOKIE['buyer_receipt']) || $_COOKIE['buyer_receipt'] != 2021){
+        if(empty($_COOKIE['buyer_receipt']) || $_COOKIE['buyer_receipt'] == 2021){
             $lastInsertedId = $buyer->buyers_info($_POST);
             if($lastInsertedId){
                 setcookie('buyer_receipt', 2021, time()+86400);
@@ -22,3 +22,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 }
+
+if(!empty($_POST['user_id_search'])){
+    $user_id = $_POST['user_id_search'];
+    $obj = new BuyerInfo();
+    $searchResult = $obj->searchByUserId($user_id);
+
+    echo json_encode($searchResult);
+
+
+}
+
+

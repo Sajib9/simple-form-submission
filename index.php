@@ -27,11 +27,12 @@
     <div class="row" id="btnAddAction">
         <div class="row">
         <div class="form-group col-md-10">
+            <form action="view/buyers/show_buyers.php" method="get">
 
                 <div class="col-md-10">
                     <div class="col-md-3">
-                        <label for="user_id">User ID:</label>
-                        <input type="text" class="form-control" id="user_id" placeholder="Search Entry By" name="user_id">
+                        <label for="user_id_search">User ID:</label>
+                        <input type="text" class="form-control" id="user_id_search" placeholder="Search Entry By" name="user_id_search">
                     </div>
                     <div class="col-md-3">
                         <label for="from_date">From Date:</label>
@@ -42,10 +43,11 @@
                         <input type="date" class="form-control" name="end_date" id="end_date" >
                     </div>
                     <div class="col-md-1">
-                        <label for="end_date"></label>
-                        <button type="submit" id="search" name="search" class="btn btn-primary">Search</button>
+                        <label for=""></label>
+                        <input type="submit" id="search" name="search" class="btn btn-primary" value="Search"/>
                     </div>
                 </div>
+            </form>
 
 
         </div>
@@ -113,6 +115,7 @@
             </table>
             <?php } ?>
         </div>
+        <div id="search_by_user_id"></div>
 
     </div>
 
@@ -120,6 +123,7 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.5.0.js" type="text/javascript"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="view/js/validate_form.js"></script>
 
 </body>
 </html>

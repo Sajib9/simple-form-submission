@@ -99,17 +99,4 @@
 <script src="../../build/js/intlTelInput-jquery.min.js"></script>
 
 </body>
-<script>
-    // Vanilla Javascript
-    var input = document.querySelector("#phone");
-    window.intlTelInput(input,({
-        // options here
-        allowDropdown: false,
-        initialCountry:"bd",
-        separateDialCode:true,
-
-
-    }));
-
-</script>
 </html>

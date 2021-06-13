@@ -1,3 +1,4 @@
+//append item input field
 $(document).ready(function() {
     var wrapper         = $(".input_fields_wrap"); //Fields wrapper
     var add_button      = $(".add_field_button"); //Add button ID
@@ -19,6 +20,46 @@ $(document).ready(function() {
             '                                </div>'); //add input box
 
     });
+});
+
+// ajax search by user id
+$( document ).ready(function() {
+    $('#user_id_search').keyup(function () {
+        var user_id_search = $(this).val();
+
+        if(user_id_search != ''){
+            $.ajax({
+                type: "POST",
+                url: "route.php",
+                data: {user_id_search : user_id_search},
+                success:function (res){
+                    var result = JSON.parse(res);
+                    $("#table-div").hide();
+                    $('#search_by_user_id').fadeIn();
+                    $('#search_by_user_id').html(result);
+
+                }
+
+            });
+        }
+        else{
+            $('#table-div').show();
+            $('#search_by_user_id').hide();
+        }
+    });
+});
+
+//phone code internation telephone javascript plugin
+$(document).ready(function () {
+    var input = document.querySelector("#phone");
+    window.intlTelInput(input, ({
+        // options here
+        allowDropdown: false,
+        initialCountry: "bd",
+        separateDialCode: true,
+
+
+    }));
 });
 
 function isEmail(email) {
@@ -144,7 +185,7 @@ function validate() {
 
 
 
-$("form").submit(function (event) {
+$("#simple_form").submit(function (event) {
     event.preventDefault();
     var valid = validate();
     console.log(valid);
@@ -171,6 +212,7 @@ $("form").submit(function (event) {
 
 });
 
+//scroll to top after submit
 $('.save-data').on("click",function(){
     $(window).scrollTop(0);
 });

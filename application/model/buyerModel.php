@@ -1,5 +1,6 @@
 <?php
-require_once('application/config/database.php');
+
+require_once($_SERVER["DOCUMENT_ROOT"].'/simple-form-submission/application/config/database.php');
 
 class BuyerModel{
 
@@ -35,9 +36,9 @@ class BuyerModel{
         }
 
         if(empty($msg)){
-            return ['resp_code' => 0, 'code'=> 200, 'message' => 'ok'];
+            return ['resp_code' => 0, 'message' => 'ok'];
         }else{
-            return ['resp_code' => 1, 'code'=> 422, 'message' => $msg];
+            return ['resp_code' => 1, 'message' => $msg];
         }
 
 
@@ -64,6 +65,43 @@ class BuyerModel{
         $sql = "SELECT * FROM buyers ORDER BY id";
         $result = $this->conn->query($sql);
 
+        $resultset = array();
+
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                $resultset[] = $row;
+            }
+        }
+        return $resultset;
+    }
+
+    public function searchByUserId($user_id){
+        $conn = new DatabaseConnection();
+        $this->conn = $conn->databaseConnection();
+
+        $query = "SELECT * FROM buyers WHERE enter_by = $user_id";
+        $sql = $this->conn->prepare($query);
+        $sql->execute();
+        $result = $sql->get_result();
+        $resultset = array();
+
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                $resultset[] = $row;
+            }
+        }
+        return $resultset;
+        
+    }
+    public function allSearch($user_id,$from,$to){
+        $conn = new DatabaseConnection();
+        $this->conn = $conn->databaseConnection();
+
+        $query = "SELECT * FROM buyers WHERE entry_at >= '$from'  AND entry_at <= '$to' AND enter_by = $user_id ";
+
+        $sql = $this->conn->prepare($query);
+        $sql->execute();
+        $result = $sql->get_result();
         $resultset = array();
 
         if ($result->num_rows > 0) {
