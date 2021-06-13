@@ -49,6 +49,43 @@ $( document ).ready(function() {
     });
 });
 
+// ajax search by user id & from date , end date
+$( document ).ready(function() {
+    $('#search').click(function () {
+        var from_date = $('#from_date').val();
+        var to_date = $('#end_date').val();
+        var user_id_search = $('#user_id_search').val();
+
+        if(from_date != '' && to_date != '' && user_id_search != ''){
+            $.ajax({
+                type: "GET",
+                url: "route.php",
+                data: {from_date : from_date,
+                    to_date : to_date,
+                    user_id_search : user_id_search,
+
+                },
+                success:function (res){
+                    console.log(res);
+                    var result = JSON.parse(res);
+
+                    $("#table-div").hide();
+                    $("#search_by_user_id").hide();
+                    $('#search_by_all').fadeIn();
+                    $('#search_by_all').html(result);
+
+                }
+
+            });
+        }
+        else{
+            $('#table-div').show();
+            $('#search_by_user_id').hide();
+            $('#search_by_all').hide();
+        }
+    });
+});
+
 //phone code internation telephone javascript plugin
 $(document).ready(function () {
     var input = document.querySelector("#phone");

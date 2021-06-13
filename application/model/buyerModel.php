@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER["DOCUMENT_ROOT"].'/simple-form-submission/application/config/database.php');
+require_once(__DIR__.'/../../application/config/database.php');
 
 class BuyerModel{
 
@@ -93,6 +93,26 @@ class BuyerModel{
         return $resultset;
         
     }
+
+    public function searchByAll($user_id,$from_date,$to_date){
+        $conn = new DatabaseConnection();
+        $this->conn = $conn->databaseConnection();
+
+        $query = "SELECT * FROM buyers WHERE entry_at >= '$from_date'  AND entry_at <= '$to_date' AND enter_by = $user_id ";
+        $sql = $this->conn->prepare($query);
+        $sql->execute();
+        $result = $sql->get_result();
+        $resultset = array();
+
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                $resultset[] = $row;
+            }
+        }
+        return $resultset;
+
+    }
+
     public function allSearch($user_id,$from,$to){
         $conn = new DatabaseConnection();
         $this->conn = $conn->databaseConnection();

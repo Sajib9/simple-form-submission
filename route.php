@@ -33,4 +33,15 @@ if(!empty($_POST['user_id_search'])){
 
 }
 
+if(!empty($_GET['from_date']) && !empty($_GET['to_date']) && !empty($_GET['user_id_search'])){
+    $user_id = $_GET['user_id_search'];
+    $from_date = $_GET['from_date'];
+    $to_date = $_GET['to_date'];
+    $obj = new BuyerInfo();
+    $searchResult = $obj->searchByAll($user_id,$from_date,$to_date);
+
+    echo json_encode($searchResult);
+
+}
+
 
