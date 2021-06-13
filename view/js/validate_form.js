@@ -35,6 +35,7 @@ $( document ).ready(function() {
                 success:function (res){
                     var result = JSON.parse(res);
                     $("#table-div").hide();
+                    $("#search_by_all").hide();
                     $('#search_by_user_id').fadeIn();
                     $('#search_by_user_id').html(result);
 
@@ -45,6 +46,7 @@ $( document ).ready(function() {
         else{
             $('#table-div').show();
             $('#search_by_user_id').hide();
+            $('#search_by_all').hide();
         }
     });
 });
