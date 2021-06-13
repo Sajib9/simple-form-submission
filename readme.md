@@ -1,14 +1,14 @@
 # How to Install and Run 
 
-## Installation Instructions
+# Installation Instructions
 
-##Required Tech
+## Required Tech
     1. php 7.4
     2. Jquery 3.5
     3. Xampp server
     4. Bootstrap 3.4
     
-##Installation
+## Installation
     1. Go to your htdocs directory of your xampp folder and clone the project from github direcotory to your xampp htdocs 
     directory  using the command git clone https://github.com/Sajib9/simple-form-submission.git for https 
     2. Create a database on your phpmyadmin "buyer_receipt" 
