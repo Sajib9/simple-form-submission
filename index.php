@@ -27,7 +27,7 @@
     <div class="row" id="btnAddAction">
         <div class="row">
         <div class="form-group col-md-10">
-            <form action="view/buyers/show_buyers.php" method="get">
+            <!--<form action="view/buyers/show_buyers.php" method="get">-->
 
                 <div class="col-md-10">
                     <div class="col-md-3">
@@ -47,7 +47,7 @@
                         <input type="submit" id="search" name="search" class="btn btn-primary" value="Search"/>
                     </div>
                 </div>
-            </form>
+            <!--</form>-->
 
 
         </div>

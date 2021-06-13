@@ -1,10 +1,10 @@
 <?php
-require_once(__DIR__.'/../../application/controller/buyerController.php');
+/*require_once(__DIR__.'/../../application/controller/buyerController.php');
 if(isset($_GET['search'])){
     if(!empty($_GET['user_id_search']) && !empty($_GET['from_date']) && !empty($_GET['end_date'])){
         $obj = new BuyerInfo();
         $allSearch = $obj->allSearch($_GET);
-        ?>
+        */?><!--
 
 <!DOCTYPE html>
 <html lang="en">
@@ -59,33 +59,33 @@ if(isset($_GET['search'])){
                 </thead>
                 <tbody>
                 <?php
-                    $i = 1;
+/*                    $i = 1;
                     if(empty($allSearch)){
                         echo "<h2 style='text-align: center;color: red;'>No Result Found</h2>";
                     }else{
                         foreach ($allSearch as $j=>$info){
 
-                ?>
+                */?>
                 <tr>
-                    <th scope="row"><?php echo $i++; ?></th>
-                    <td><?php echo $info['amount']; ?> tk</td>
-                    <td><?php echo $info['buyer_name']; ?></td>
-                    <td><?php echo $info['receipt_id']; ?></td>
-                    <td><?php echo $info['item']; ?></td>
-                    <td><?php echo $info['email']; ?></td>
-                    <td><?php echo $info['buyer_ip']; ?></td>
-                    <td><?php echo $info['note']; ?></td>
-                    <td><?php echo $info['phone']; ?></td>
-                    <td class="cell-breakAll"><?php echo $info['hash_key']; ?></td>
-                    <td><?php echo $info['entry_at']; ?></td>
-                    <td><?php echo $info['enter_by']; ?></td>
+                    <th scope="row"><?php /*echo $i++; */?></th>
+                    <td><?php /*echo $info['amount']; */?> tk</td>
+                    <td><?php /*echo $info['buyer_name']; */?></td>
+                    <td><?php /*echo $info['receipt_id']; */?></td>
+                    <td><?php /*echo $info['item']; */?></td>
+                    <td><?php /*echo $info['email']; */?></td>
+                    <td><?php /*echo $info['buyer_ip']; */?></td>
+                    <td><?php /*echo $info['note']; */?></td>
+                    <td><?php /*echo $info['phone']; */?></td>
+                    <td class="cell-breakAll"><?php /*echo $info['hash_key']; */?></td>
+                    <td><?php /*echo $info['entry_at']; */?></td>
+                    <td><?php /*echo $info['enter_by']; */?></td>
                 </tr>
 
                 <?php
-                        }
+/*                        }
                     }
 
-                ?>
+                */?>
                 </tbody>
             </table>
 
@@ -95,9 +95,10 @@ if(isset($_GET['search'])){
 </div>
 </body>
 <?php
-
+/*
     }
 }
-?>
+*/?>
 <script src="https://code.jquery.com/jquery-3.5.0.js" type="text/javascript"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+-->
