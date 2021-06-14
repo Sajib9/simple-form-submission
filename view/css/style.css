@@ -17,3 +17,8 @@
 .b-top{
     border-top: 1px solid #ddd !important;
 }
+#search_error{
+    font-size: 22px;
+    color: red;
+    text-align: center;
+}

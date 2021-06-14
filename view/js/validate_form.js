@@ -82,6 +82,7 @@ $( document ).ready(function() {
         }
         else{
             $('#table-div').show();
+            $('#search_error').html("Please Provide User Id, From Date & End Date for filter in combine Search");
             $('#search_by_user_id').hide();
             $('#search_by_all').hide();
         }

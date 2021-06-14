@@ -51,9 +51,14 @@
 
 
         </div>
+
         <div class="form-group col-md-2">
             <a class="btn btn-success" href="view/buyers/buyer_create.php" style="margin-top: 18px">Add New Receipt</a>
         </div>
+
+        </div>
+        <div class="text-danger" id="search_error">
+
         </div>
         <?php
             $controllerInstance = new BuyerInfo();
