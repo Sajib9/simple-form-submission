@@ -11,7 +11,7 @@ class BuyerInfo{
         $amount = $data['amount'];
         $buyer_name = $data['buyer_name'];
         $receipt_id = $data['receipt_id'];
-        $item = implode("|",$data['item']);
+        $item = implode("||",$data['item']);
         $email = $data['email'];
         $ip = $_SERVER['REMOTE_ADDR'];
         $note = $data['note'];
